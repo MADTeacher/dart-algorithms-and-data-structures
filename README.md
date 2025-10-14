@@ -1,5 +1,5 @@
 # Репозиторий книги "Алгоритмы и структуры данных на Dart"
-В данном репозитории приведен код [1-го издания книги «Алгоритмы и структуры данных на Dart»](https://boosty.to/madteacher/posts/665ac94c-69e0-4ecf-a645-79fbaf2838fd?share=post_link) и курса на поатформе Stepik.
+В данном репозитории приведен код [1-го издания книги «Алгоритмы и структуры данных на Dart»](https://boosty.to/madteacher/posts/665ac94c-69e0-4ecf-a645-79fbaf2838fd?share=post_link) и курса на поатформе Stepik [Основы разработки на Dart: рыцарь-джедай](https://stepik.org/a/255705).
 
 # Моя серия книг Dart/Flutter
 - [**Основы Dart**](https://boosty.to/madteacher/posts/4dc87097-41c2-4cf8-bb95-09a6a1cf6020?share=post_link) [pdf+epub]
