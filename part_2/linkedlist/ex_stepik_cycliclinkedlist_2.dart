@@ -161,20 +161,20 @@ void main() {
   
   // Тест 2: Проверка независимости
   print('\nПроверка независимости:');
-  print('A._head == B._head: ${listA._head == listB._head} (должно быть false)');
+  print('A._head == B._head: ${listA._head == listB._head}');
   
   // Изменяем список A
   listA.add(40);
   print('\nПосле добавления 40 в A:');
   print('Длина A: ${listA.length}');
-  print('Длина B: ${listB.length} (должна остаться прежней)');
+  print('Длина B: ${listB.length}');
   
   // Тест 3: Проверка корректности цикла в копии
   print('\nПроверка корректности цикла в B:');
   print('B._head != null: ${listB._head != null}');
   if (listB._head != null) {
-    print('B._head!.prevPtr!.nextPtr == B._head: ${listB._head!.prevPtr!.nextPtr == listB._head} (должно быть true)');
-    print('B._head!.nextPtr!.prevPtr == B._head: ${listB._head!.nextPtr!.prevPtr == listB._head} (должно быть true)');
+    print('B._head!.prevPtr!.nextPtr == B._head: ${listB._head!.prevPtr!.nextPtr == listB._head}');
+    print('B._head!.nextPtr!.prevPtr == B._head: ${listB._head!.nextPtr!.prevPtr == listB._head}');
   }
   
   // Тест 4: Копирование пустого списка
@@ -192,6 +192,6 @@ void main() {
   print('\nСписок с одним элементом:');
   print('Оригинал: ${singleList.value()}');
   print('Копия: ${singleCopy.value()}');
-  print('singleList._head == singleCopy._head: ${singleList._head == singleCopy._head} (должно быть false)');
+  print('singleList._head == singleCopy._head: ${singleList._head == singleCopy._head}');
 }
 

@@ -246,31 +246,31 @@ void main() {
   
   var result1 = listA.insertBefore(20, 15);
   print('После insertBefore(20, 15): $listA');
-  print('Результат: $result1 (должно быть true)');
-  print('_head.data: ${listA._head!.data} (должно быть 10)');
+  print('Результат: $result1');
+  print('_head.data: ${listA._head!.data}');
   
   var result2 = listA.insertBefore(10, 5);
   print('После insertBefore(10, 5): $listA');
-  print('Результат: $result2 (должно быть true)');
-  print('_head.data: ${listA._head!.data} (должно быть 5)');
+  print('Результат: $result2');
+  print('_head.data: ${listA._head!.data}');
   print('Ожидаемый результат: [5, 10, 15, 20, 30]');
   
   // Тест 2: Попытка вставить перед несуществующим элементом
   var result3 = listA.insertBefore(999, 100);
   print('После insertBefore(999, 100): $listA');
-  print('Результат: $result3 (должно быть false)');
+  print('Результат: $result3');
   
   // Тест 3: Вставка в пустой список
   var emptyList = DoublyLinkedList<int>();
   var result4 = emptyList.insertBefore(10, 5);
-  print('Пустой список, insertBefore(10, 5): $result4 (должно быть false)');
+  print('Пустой список, insertBefore(10, 5): $result4');
   
   // Тест 4: Вставка перед первым элементом (когда он единственный)
   var singleList = DoublyLinkedList<int>();
   singleList.push(10);
   var result5 = singleList.insertBefore(10, 5);
   print('Список из одного элемента: $singleList');
-  print('Результат: $result5 (должно быть true)');
-  print('_head.data: ${singleList._head!.data} (должно быть 5)');
+  print('Результат: $result5');
+  print('_head.data: ${singleList._head!.data}');
 }
 

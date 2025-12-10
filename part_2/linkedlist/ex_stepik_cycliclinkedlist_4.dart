@@ -189,16 +189,16 @@ void main() {
   print('\nПосле split():');
   print('Список A (первая половина):');
   listA.forEach((data) => print(data));
-  print('Длина A: ${listA.length} (должна быть 2)');
+  print('Длина A: ${listA.length}');
   
   print('\nСписок B (вторая половина):');
   listB.forEach((data) => print(data));
-  print('Длина B: ${listB.length} (должна быть 2)');
+  print('Длина B: ${listB.length}');
   
   // Проверка корректности циклов
   print('\nПроверка корректности циклов:');
-  print('A._head!.prevPtr!.nextPtr == A._head: ${listA._head!.prevPtr!.nextPtr == listA._head} (должно быть true)');
-  print('B._head!.prevPtr!.nextPtr == B._head: ${listB._head!.prevPtr!.nextPtr == listB._head} (должно быть true)');
+  print('A._head!.prevPtr!.nextPtr == A._head: ${listA._head!.prevPtr!.nextPtr == listA._head}');
+  print('B._head!.prevPtr!.nextPtr == B._head: ${listB._head!.prevPtr!.nextPtr == listB._head}');
   
   // Тест 2: Нечетная длина
   var listC = CyclicLinkedList<int>();
@@ -215,11 +215,11 @@ void main() {
   print('\nПосле split():');
   print('Список C (первая половина):');
   listC.forEach((data) => print(data));
-  print('Длина C: ${listC.length} (должна быть 3)');
+  print('Длина C: ${listC.length}');
   
   print('\nСписок D (вторая половина):');
   listD.forEach((data) => print(data));
-  print('Длина D: ${listD.length} (должна быть 2)');
+  print('Длина D: ${listD.length}');
   
   // Тест 3: Список с одним элементом
   var singleList = CyclicLinkedList<int>();
@@ -230,15 +230,15 @@ void main() {
   print('После split():');
   print('Оригинал:');
   singleList.forEach((data) => print(data));
-  print('Длина оригинала: ${singleList.length} (должна быть 1)');
-  print('Длина результата split: ${emptySplit.length} (должна быть 0)');
+  print('Длина оригинала: ${singleList.length}');
+  print('Длина результата split: ${emptySplit.length}');
   
   // Тест 4: Пустой список
   var emptyList = CyclicLinkedList<int>();
   var emptyResult = emptyList.split();
   print('\n\nПустой список:');
   print('Длина оригинала: ${emptyList.length}');
-  print('Длина результата split: ${emptyResult.length} (должна быть 0)');
+  print('Длина результата split: ${emptyResult.length}');
   
   // Тест 5: Список с двумя элементами
   var twoList = CyclicLinkedList<int>();
@@ -250,9 +250,9 @@ void main() {
   print('После split():');
   print('Первая половина:');
   twoList.forEach((data) => print(data));
-  print('Длина первой половины: ${twoList.length} (должна быть 1)');
+  print('Длина первой половины: ${twoList.length}');
   print('Вторая половина:');
   twoSplit.forEach((data) => print(data));
-  print('Длина второй половины: ${twoSplit.length} (должна быть 1)');
+  print('Длина второй половины: ${twoSplit.length}');
 }
 

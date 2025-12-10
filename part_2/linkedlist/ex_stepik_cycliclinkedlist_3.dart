@@ -179,7 +179,7 @@ void main() {
   print('\nСписок B:');
   listB.forEach((data) => print(data));
   
-  print('\nA.equals(B): ${listA.equals(listB)} (должно быть true)');
+  print('\nA.equals(B): ${listA.equals(listB)}');
   
   // Тест 2: Списки с одинаковыми элементами, но разным порядком
   var listC = CyclicLinkedList<int>();
@@ -188,7 +188,7 @@ void main() {
   listC.add(20);
   print('\nСписок C (те же элементы, но другой порядок):');
   listC.forEach((data) => print(data));
-  print('A.equals(C): ${listA.equals(listC)} (должно быть false, т.к. сравнение начинается с _head)');
+  print('A.equals(C): ${listA.equals(listC)}');
   
   // Тест 3: Списки разной длины
   var listD = CyclicLinkedList<int>();
@@ -196,17 +196,17 @@ void main() {
   listD.add(20);
   print('\nСписок D (короче):');
   listD.forEach((data) => print(data));
-  print('A.equals(D): ${listA.equals(listD)} (должно быть false)');
+  print('A.equals(D): ${listA.equals(listD)}');
   
   // Тест 4: Пустые списки
   var emptyA = CyclicLinkedList<int>();
   var emptyB = CyclicLinkedList<int>();
   print('\nПустые списки:');
-  print('emptyA.equals(emptyB): ${emptyA.equals(emptyB)} (должно быть true)');
+  print('emptyA.equals(emptyB): ${emptyA.equals(emptyB)}');
   
   // Тест 5: Один пустой, другой нет
-  print('emptyA.equals(A): ${emptyA.equals(listA)} (должно быть false)');
-  print('A.equals(emptyA): ${listA.equals(emptyA)} (должно быть false)');
+  print('emptyA.equals(A): ${emptyA.equals(listA)}');
+  print('A.equals(emptyA): ${listA.equals(emptyA)}');
   
   // Тест 6: Списки с одним элементом
   var singleA = CyclicLinkedList<int>();
@@ -216,8 +216,8 @@ void main() {
   var singleC = CyclicLinkedList<int>();
   singleC.add(99);
   print('\nСписки с одним элементом:');
-  print('singleA.equals(singleB): ${singleA.equals(singleB)} (должно быть true)');
-  print('singleA.equals(singleC): ${singleA.equals(singleC)} (должно быть false)');
+  print('singleA.equals(singleB): ${singleA.equals(singleB)}');
+  print('singleA.equals(singleC): ${singleA.equals(singleC)}');
   
   // Тест 7: Списки с одинаковыми элементами в одинаковом порядке, но разной позицией _head
   // (это должно быть false, т.к. сравнение начинается с _head)
@@ -228,6 +228,6 @@ void main() {
   listE.rotate(1); // Сдвигаем _head
   print('\nСписок E (те же элементы, но _head сдвинут):');
   listE.forEach((data) => print(data));
-  print('A.equals(E): ${listA.equals(listE)} (должно быть false, т.к. сравнение начинается с _head)');
+  print('A.equals(E): ${listA.equals(listE)}');
 }
 

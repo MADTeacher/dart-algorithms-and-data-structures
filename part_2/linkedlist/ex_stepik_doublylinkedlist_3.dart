@@ -260,16 +260,16 @@ void main() {
   
   listA.swapHeadAndTail();
   print('После swapHeadAndTail(): $listA');
-  print('_head.data: ${listA._head!.data} (должно быть 40)');
-  print('_tail.data: ${listA._tail!.data} (должно быть 10)');
+  print('_head.data: ${listA._head!.data}');
+  print('_tail.data: ${listA._tail!.data}');
   print('Ожидаемый результат: [40, 20, 30, 10]');
   
   // Проверка связей
   print('Проверка связей:');
-  print('_head.next.data: ${listA._head!.next!.data} (должно быть 20)');
-  print('_head.next.prev.data: ${listA._head!.next!.prev!.data} (должно быть 40)');
-  print('_tail.prev.data: ${listA._tail!.prev!.data} (должно быть 30)');
-  print('_tail.prev.next.data: ${listA._tail!.prev!.next!.data} (должно быть 10)');
+  print('_head.next.data: ${listA._head!.next!.data}');
+  print('_head.next.prev.data: ${listA._head!.next!.prev!.data}');
+  print('_tail.prev.data: ${listA._tail!.prev!.data}');
+  print('_tail.prev.next.data: ${listA._tail!.prev!.next!.data}');
   
   // Тест 2: Список из двух элементов
   var listB = DoublyLinkedList<int>();
@@ -279,8 +279,8 @@ void main() {
   listB.swapHeadAndTail();
   print('После swapHeadAndTail(): $listB');
   print('Ожидаемый результат: [2, 1]');
-  print('_head.data: ${listB._head!.data} (должно быть 2)');
-  print('_tail.data: ${listB._tail!.data} (должно быть 1)');
+  print('_head.data: ${listB._head!.data}');
+  print('_tail.data: ${listB._tail!.data}');
   
   // Тест 3: Список из одного элемента
   var singleList = DoublyLinkedList<int>();
@@ -309,7 +309,7 @@ void main() {
   listC.swapHeadAndTail();
   print('После swapHeadAndTail(): $listC');
   print('Ожидаемый результат: [3, 2, 1]');
-  print('_head.data: ${listC._head!.data} (должно быть 3)');
-  print('_tail.data: ${listC._tail!.data} (должно быть 1)');
+  print('_head.data: ${listC._head!.data}');
+  print('_tail.data: ${listC._tail!.data}');
 }
 

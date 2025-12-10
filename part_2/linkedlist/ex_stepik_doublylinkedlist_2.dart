@@ -250,14 +250,14 @@ void main() {
   
   var result1 = listA.removeKthFromEnd(1);
   print('После removeKthFromEnd(1): $listA');
-  print('Удаленный элемент: $result1 (должно быть 50)');
-  print('_tail.data: ${listA._tail!.data} (должно быть 40)');
+  print('Удаленный элемент: $result1');
+  print('_tail.data: ${listA._tail!.data}');
   print('Ожидаемый результат: [10, 20, 30, 40]');
   
   var result2 = listA.removeKthFromEnd(4);
   print('После removeKthFromEnd(4): $listA');
-  print('Удаленный элемент: $result2 (должно быть 10)');
-  print('_head.data: ${listA._head!.data} (должно быть 20)');
+  print('Удаленный элемент: $result2');
+  print('_head.data: ${listA._head!.data}');
   print('Ожидаемый результат: [20, 30, 40]');
   
   // Тест 2: Удаление из середины
@@ -270,7 +270,7 @@ void main() {
   print('\nСписок B: $listB');
   var result3 = listB.removeKthFromEnd(3);
   print('После removeKthFromEnd(3): $listB');
-  print('Удаленный элемент: $result3 (должно быть 3)');
+  print('Удаленный элемент: $result3');
   print('Ожидаемый результат: [1, 2, 4, 5]');
   
   // Тест 3: Удаление из списка с одним элементом
@@ -279,8 +279,8 @@ void main() {
   print('\nСписок из одного элемента: $singleList');
   var result4 = singleList.removeKthFromEnd(1);
   print('После removeKthFromEnd(1): $singleList');
-  print('Удаленный элемент: $result4 (должно быть 100)');
-  print('Список пуст: ${singleList.isEmpty} (должно быть true)');
+  print('Удаленный элемент: $result4');
+  print('Список пуст: ${singleList.isEmpty}');
   
   // Тест 4: Проверка граничных случаев (должны выбрасывать исключение)
   try {

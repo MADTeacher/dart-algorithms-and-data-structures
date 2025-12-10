@@ -177,18 +177,17 @@ void main() {
   listA.add(30);
   print('Исходный список A:');
   listA.forEach((data) => print(data));
-  print('_head.data: ${listA.value()} (должно быть 30)');
+  print('_head.data: ${listA.value()}');
   
   listA.insertAt(15, 1);
   print('\nПосле insertAt(15, 1):');
   listA.forEach((data) => print(data));
-  print('Ожидаемый результат: [30, 15, 10, 20] или [10, 15, 20, 30]');
   print('_head.data: ${listA.value()}');
   
   listA.insertAt(5, 0);
   print('\nПосле insertAt(5, 0):');
   listA.forEach((data) => print(data));
-  print('_head.data: ${listA.value()} (должно быть 5)');
+  print('_head.data: ${listA.value()}');
   print('Длина списка: ${listA.length}');
   
   // Тест 2: Вставка в конец

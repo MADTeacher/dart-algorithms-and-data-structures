@@ -246,8 +246,8 @@ void main() {
   listA.rotate(2);
   print('После rotate(2): $listA');
   print('Ожидаемый результат: [4, 5, 1, 2, 3]');
-  print('_head.data: ${listA._head!.data} (должно быть 4)');
-  print('_tail.data: ${listA._tail!.data} (должно быть 3)');
+  print('_head.data: ${listA._head!.data}');
+  print('_tail.data: ${listA._tail!.data}');
   
   // Тест 2: k больше длины списка
   var listB = DoublyLinkedList<int>();
@@ -260,8 +260,8 @@ void main() {
   listB.rotate(7); // 7 % 5 = 2, эквивалентно rotate(2)
   print('После rotate(7): $listB');
   print('Ожидаемый результат: [4, 5, 1, 2, 3] (эквивалентно rotate(2))');
-  print('_head.data: ${listB._head!.data} (должно быть 4)');
-  print('_tail.data: ${listB._tail!.data} (должно быть 3)');
+  print('_head.data: ${listB._head!.data}');
+  print('_tail.data: ${listB._tail!.data}');
   
   // Тест 3: k равно длине списка (k % length == 0)
   var listC = DoublyLinkedList<int>();
@@ -274,8 +274,8 @@ void main() {
   listC.rotate(3); // 3 % 3 = 0, список не должен измениться
   print('После rotate(3): $listC');
   print('Ожидаемый результат: [1, 2, 3] (без изменений)');
-  print('_head == headBefore: ${listC._head == headBefore} (должно быть true)');
-  print('_tail == tailBefore: ${listC._tail == tailBefore} (должно быть true)');
+  print('_head == headBefore: ${listC._head == headBefore}');
+  print('_tail == tailBefore: ${listC._tail == tailBefore}');
   
   // Тест 4: rotate(1) - сдвиг на одну позицию
   var listD = DoublyLinkedList<int>();
@@ -286,8 +286,8 @@ void main() {
   listD.rotate(1);
   print('После rotate(1): $listD');
   print('Ожидаемый результат: [30, 10, 20]');
-  print('_head.data: ${listD._head!.data} (должно быть 30)');
-  print('_tail.data: ${listD._tail!.data} (должно быть 20)');
+  print('_head.data: ${listD._head!.data}');
+  print('_tail.data: ${listD._tail!.data}');
   
   // Тест 5: Список из одного элемента
   var singleList = DoublyLinkedList<int>();
@@ -302,7 +302,7 @@ void main() {
   print('\nПустой список: $emptyList');
   emptyList.rotate(10);
   print('После rotate(10): $emptyList');
-  print('Список остался пустым: ${emptyList.isEmpty} (должно быть true)');
+  print('Список остался пустым: ${emptyList.isEmpty}');
   
   // Тест 7: Отрицательный k (будет обработан как положительный после модуля)
   var listE = DoublyLinkedList<int>();
@@ -314,6 +314,6 @@ void main() {
   // поэтому просто проверим, что метод работает с k=0
   listE.rotate(0);
   print('После rotate(0): $listE');
-  print('Ожидаемый результат: [1, 2, 3] (без изменений)');
+  print('Ожидаемый результат: [1, 2, 3]');
 }
 
