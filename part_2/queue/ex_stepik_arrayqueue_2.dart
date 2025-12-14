@@ -125,18 +125,18 @@ void main() {
   print('peek(): ${queue.peek()}'); // 4
   print('');
 
-  print('=== Тест 2: rotate(0) и rotate(size) (не меняется) ===');
+  print('=== Тест 2: rotate(0) и rotate(size) ===');
   var queue2 = ArrayQueue<int>(fixedSize: 4);
   queue2.enqueue(10);
   queue2.enqueue(20);
   queue2.enqueue(30);
   print('Очередь до rotate: $queue2');
   queue2.rotate(0);
-  print('После rotate(0): $queue2 (не изменилась)');
+  print('После rotate(0): $queue2');
   queue2.rotate(3);
-  print('После rotate(3): $queue2 (не изменилась, т.к. size=3)');
+  print('После rotate(3): $queue2');
   queue2.rotate(6);
-  print('После rotate(6): $queue2 (не изменилась, т.к. 6 % 3 = 0)');
+  print('После rotate(6): $queue2');
   print('');
 
   print('=== Тест 3: rotate влево (отрицательный k) ===');
@@ -197,10 +197,10 @@ void main() {
   var queue7 = ArrayQueue<int>();
   print('Пустая очередь: $queue7');
   queue7.rotate(5);
-  print('После rotate(5): $queue7 (не изменилась)');
+  print('После rotate(5): $queue7');
   queue7.enqueue(42);
   queue7.rotate(1);
-  print('После добавления 42 и rotate(1): $queue7 (не изменилась)');
+  print('После добавления 42 и rotate(1): $queue7');
   print('');
 
   print('=== Тест 8: Большой k (нормализация) ===');

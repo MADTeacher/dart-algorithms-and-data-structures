@@ -260,6 +260,5 @@ void main() {
   var newQueue10 = queue10.split(2);
   print('Текущая очередь: $queue10'); // [a, b]
   print('Новая очередь: $newQueue10'); // [c, d]
-  print('');
 }
 

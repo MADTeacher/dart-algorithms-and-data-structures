@@ -155,9 +155,7 @@ void check(bool condition, String message) {
 }
 
 void main() {
-  print('=' * 60);
   print('ТЕСТ 1: Поиск существующего элемента в MaxHeap');
-  print('=' * 60);
   var heap = Heap.fromList([10, 5, 20, 3, 15], isMaxHeap: true);
   print('Куча: $heap');
   
@@ -169,9 +167,7 @@ void main() {
     check(index >= 0, 'Элемент $value не найден');
   }
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 2: Поиск несуществующего элемента');
-  print('=' * 60);
+  print('\nТЕСТ 2: Поиск несуществующего элемента');
   int notFound = heap.indexOf(100);
   print('indexOf(100) = $notFound');
   check(notFound == -1, 'Несуществующий элемент вернул не -1');
@@ -180,9 +176,7 @@ void main() {
   print('indexOf(-5) = $notFound2');
   check(notFound2 == -1, 'Несуществующий элемент вернул не -1');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 3: Поиск в MinHeap');
-  print('=' * 60);
+  print('\nТЕСТ 3: Поиск в MinHeap');
   var minHeap = Heap.fromList([10, 5, 20, 3, 15], isMaxHeap: false);
   print('Min Heap: $minHeap');
   
@@ -195,9 +189,7 @@ void main() {
   print('indexOf(99) = ${minHeap.indexOf(99)}');
   check(minHeap.indexOf(99) == -1, 'Несуществующий элемент вернул не -1');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 4: Поиск после операций insert/extract');
-  print('=' * 60);
+  print('\nТЕСТ 4: Поиск после операций insert/extract');
   var dynamicHeap = Heap<int>(isMaxHeap: true);
   dynamicHeap.insert(50);
   dynamicHeap.insert(30);
@@ -225,17 +217,13 @@ void main() {
   check(dynamicHeap.indexOf(30) >= 0, 'Элемент 30 не найден');
   check(dynamicHeap.indexOf(10) >= 0, 'Элемент 10 не найден');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 5: Поиск в пустой куче');
-  print('=' * 60);
+  print('\nТЕСТ 5: Поиск в пустой куче');
   var emptyHeap = Heap<int>(isMaxHeap: true);
   int emptyIndex = emptyHeap.indexOf(5);
   print('indexOf(5) в пустой куче = $emptyIndex');
   check(emptyIndex == -1, 'В пустой куче вернулся не -1');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 6: Поиск дубликатов');
-  print('=' * 60);
+  print('\nТЕСТ 6: Поиск дубликатов');
   var duplicateHeap = Heap.fromList([5, 5, 5, 10, 10], isMaxHeap: true);
   print('Куча с дубликатами: $duplicateHeap');
   int firstIndex = duplicateHeap.indexOf(5);
@@ -245,7 +233,5 @@ void main() {
   int firstIndex10 = duplicateHeap.indexOf(10);
   print('indexOf(10) = $firstIndex10');
   check(firstIndex10 >= 0, 'Элемент 10 не найден');
-  
-  print('\n✅ Все тесты пройдены успешно!');
 }
 

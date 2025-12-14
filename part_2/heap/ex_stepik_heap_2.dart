@@ -189,9 +189,7 @@ void check(bool condition, String message) {
 }
 
 void main() {
-  print('=' * 60);
   print('ТЕСТ 1: Удаление элемента из середины кучи');
-  print('=' * 60);
   var heap = Heap.fromList([10, 5, 20, 3], isMaxHeap: true);
   print('Исходная куча (size: ${heap.size}):');
   print(heap);
@@ -227,9 +225,7 @@ void main() {
   check(isCorrectOrder, 'Порядок извлечения не убывающий');
   check(!extracted.contains(5), 'Удаленный элемент был извлечен');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 2: Удаление несуществующего элемента');
-  print('=' * 60);
+  print('\nТЕСТ 2: Удаление несуществующего элемента');
   var heap2 = Heap.fromList([10, 5, 20, 3], isMaxHeap: true);
   int sizeBefore = heap2.size;
   bool notFound = heap2.remove(100);
@@ -238,9 +234,7 @@ void main() {
   print('Размер остался: ${heap2.size}');
   check(heap2.size == sizeBefore, 'Размер изменился');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 3: Удаление корневого элемента');
-  print('=' * 60);
+  print('\nТЕСТ 3: Удаление корневого элемента');
   var heap3 = Heap.fromList([10, 5, 20, 3, 15], isMaxHeap: true);
   print('Исходная куча:');
   print(heap3);
@@ -258,9 +252,7 @@ void main() {
   int newRoot = heap3.peek();
   print('\nПроверка свойства кучи: новый корень = $newRoot');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 4: Удаление последнего элемента');
-  print('=' * 60);
+  print('\nТЕСТ 4: Удаление последнего элемента');
   var heap4 = Heap.fromList([10, 5, 20, 3], isMaxHeap: true);
   print('Исходная куча:');
   print(heap4);
@@ -276,9 +268,7 @@ void main() {
   print(heap4);
   check(heap4.indexOf(minValue) == -1, 'Элемент не удален');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 5: Удаление всех элементов по одному');
-  print('=' * 60);
+  print('\nТЕСТ 5: Удаление всех элементов по одному');
   var heap5 = Heap.fromList([10, 5, 20, 3, 15, 7], isMaxHeap: true);
   print('Исходная куча (size: ${heap5.size}):');
   print(heap5);
@@ -307,9 +297,7 @@ void main() {
   print('Финальный размер: ${heap5.size}');
   check(heap5.isEmpty, 'Куча не пустая');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 6: Удаление в MinHeap');
-  print('=' * 60);
+  print('\nТЕСТ 6: Удаление в MinHeap');
   var minHeap = Heap.fromList([10, 5, 20, 3, 15], isMaxHeap: false);
   print('Исходная MinHeap:');
   print(minHeap);
@@ -339,14 +327,10 @@ void main() {
   print('Порядок извлечения корректен: $isMinOrderCorrect');
   check(isMinOrderCorrect, 'Порядок не возрастающий');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 7: Удаление из пустой кучи');
-  print('=' * 60);
+  print('\nТЕСТ 7: Удаление из пустой кучи');
   var emptyHeap = Heap<int>(isMaxHeap: true);
   bool emptyRemoved = emptyHeap.remove(5);
   print('Попытка удалить из пустой кучи: $emptyRemoved');
   check(emptyRemoved == false, 'Из пустой кучи вернулся не false');
-  
-  print('\n✅ Все тесты пройдены успешно!');
 }
 

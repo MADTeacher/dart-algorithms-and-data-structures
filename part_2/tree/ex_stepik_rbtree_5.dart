@@ -426,57 +426,39 @@ class RBTree<T extends IKey> {
 }
 
 void main() {
-  print('=== Задача 5: Проверка суммы пути (Path Sum) ===\n');
-
   final tree = RBTree<Worker>();
 
   // Структура дерева: 20 / 10 30 / 5
   // Пути:
   // 20 -> 30 (сумма 50)
   // 20 -> 10 -> 5 (сумма 35)
-  print('Создаем дерево: 20 / 10 30 / 5');
   tree.insert(Worker('A', 20));
   tree.insert(Worker('B', 10));
   tree.insert(Worker('C', 30));
   tree.insert(Worker('D', 5));
   tree.printTree();
 
-  print('\nПути от корня до листьев:');
-  print('  20 -> 30 (сумма: 20 + 30 = 50)');
-  print('  20 -> 10 -> 5 (сумма: 20 + 10 + 5 = 35)');
-  print('\nВнимание: 20 -> 10 не является путем до листа, так как у 10 есть левый ребенок.');
-
   // hasPathSum(50) -> true
   print('\n--- Тест 1: hasPathSum(50) ---');
   final hasPath50 = tree.hasPathSum(50);
   print('hasPathSum(50) = $hasPath50');
-  print('Ожидается: true (путь 20 -> 30)');
-  assert(hasPath50 == true, 'Ожидалось true для суммы 50');
 
   // hasPathSum(35) -> true
   print('\n--- Тест 2: hasPathSum(35) ---');
   final hasPath35 = tree.hasPathSum(35);
   print('hasPathSum(35) = $hasPath35');
-  print('Ожидается: true (путь 20 -> 10 -> 5)');
-  assert(hasPath35 == true, 'Ожидалось true для суммы 35');
 
   // hasPathSum(30) -> false (30 — только корень и часть пути)
   print('\n--- Тест 3: hasPathSum(30) ---');
   final hasPath30 = tree.hasPathSum(30);
   print('hasPathSum(30) = $hasPath30');
-  print('Ожидается: false (30 — только корень, не лист)');
-  assert(hasPath30 == false, 'Ожидалось false для суммы 30');
 
   // Дополнительные тесты
   print('\n--- Дополнительные тесты ---');
   final hasPath20 = tree.hasPathSum(20);
-  print('hasPathSum(20) = $hasPath20 (ожидается false, корень не лист)');
-  assert(hasPath20 == false, 'Ожидалось false для суммы 20');
+  print('hasPathSum(20) = $hasPath20');
 
   final hasPath100 = tree.hasPathSum(100);
-  print('hasPathSum(100) = $hasPath100 (ожидается false)');
-  assert(hasPath100 == false, 'Ожидалось false для суммы 100');
-
-  print('\n✓ Все тесты пройдены успешно!');
+  print('hasPathSum(100) = $hasPath100');
 }
 

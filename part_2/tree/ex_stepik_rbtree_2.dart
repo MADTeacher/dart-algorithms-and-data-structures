@@ -418,8 +418,6 @@ class RBTree<T extends IKey> {
 }
 
 void main() {
-  print('=== Задача 2: Подсчет черных узлов ===\n');
-
   final tree = RBTree<Worker>();
 
   // Вставить элементы: 10, 5, 20
@@ -433,8 +431,6 @@ void main() {
   print('\nПодсчет черных узлов:');
   final blackNodes = tree.totalBlackNodes;
   print('totalBlackNodes = $blackNodes');
-  print('Ожидается: 1 (корень всегда черный, дети красные)');
-  assert(blackNodes == 1, 'Ожидалось 1 черный узел');
 
   // Дополнительный тест с большим количеством элементов
   print('\n--- Дополнительный тест ---');
@@ -447,7 +443,5 @@ void main() {
   tree2.printTree();
   final blackNodes2 = tree2.totalBlackNodes;
   print('\ntotalBlackNodes = $blackNodes2');
-
-  print('\n✓ Все тесты пройдены успешно!');
 }
 

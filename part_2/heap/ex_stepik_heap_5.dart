@@ -161,9 +161,7 @@ void check(bool condition, String message) {
 }
 
 void main() {
-  print('=' * 60);
   print('ТЕСТ 1: Тернарная куча с 12 элементами');
-  print('=' * 60);
   var heap = Heap<int>(isMaxHeap: true);
   
   for (int i = 1; i <= 12; i++) {
@@ -190,9 +188,7 @@ void main() {
   }
   
   // Проверка высоты
-  print('\n' + '=' * 60);
-  print('ТЕСТ 2: Проверка корректности extract');
-  print('=' * 60);
+  print('\nТЕСТ 2: Проверка корректности extract');
   print('Извлекаем элементы по порядку:');
   List<int> extracted = [];
   while (!heap.isEmpty) {
@@ -215,9 +211,7 @@ void main() {
   check(extracted.first == 12, 'Первый элемент не максимальный');
   check(extracted.last == 1, 'Последний элемент не минимальный');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 3: Тернарная Min Heap');
-  print('=' * 60);
+  print('\nТЕСТ 3: Тернарная Min Heap');
   var minHeap = Heap<int>(isMaxHeap: false);
   for (int i = 12; i >= 1; i--) {
     minHeap.insert(i);
@@ -235,9 +229,7 @@ void main() {
     check(children.length <= 3, 'У узла более 3 детей');
   });
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 4: Проверка корректности extract');
-  print('=' * 60);
+  print('\nТЕСТ 4: Проверка корректности extract');
   List<int> minExtracted = [];
   while (!minHeap.isEmpty) {
     int value = minHeap.extract();
@@ -257,11 +249,9 @@ void main() {
   check(minExtracted.first == 1, 'Первый элемент не минимальный');
   check(minExtracted.last == 12, 'Последний элемент не максимальный');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 5: Проверка структуры для разных размеров');
-  print('=' * 60);
+  print('\nТЕСТ 5: Проверка структуры для разных размеров');
   
-  // Тест с 1 элементом
+  // \nТест с 1 элементом
   var heap1 = Heap<int>(isMaxHeap: true);
   heap1.insert(1);
   print('1 элемент:');
@@ -269,7 +259,7 @@ void main() {
   print('Структура: $struct1');
   check(struct1.isEmpty, 'У одного элемента есть дети');
   
-  // Тест с 4 элементами
+  // \nТест с 4 элементами
   var heap4 = Heap<int>(isMaxHeap: true);
   for (int i = 1; i <= 4; i++) {
     heap4.insert(i);
@@ -282,7 +272,7 @@ void main() {
   });
   check(struct4[0] != null && struct4[0]!.length == 3, 'У корня не 3 ребенка');
   
-  // Тест с 13 элементами
+  // \nТест с 13 элементами
   var heap13 = Heap<int>(isMaxHeap: true);
   for (int i = 1; i <= 13; i++) {
     heap13.insert(i);
@@ -297,9 +287,7 @@ void main() {
     }
   });
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 6: Проверка математики индексов');
-  print('=' * 60);
+  print('\nТЕСТ 6: Проверка математики индексов');
   var testHeap = Heap<int>(isMaxHeap: true);
   for (int i = 1; i <= 10; i++) {
     testHeap.insert(i);
@@ -329,9 +317,7 @@ void main() {
   }
   print('Все формулы корректны ✅');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 7: Сравнение с бинарной кучей');
-  print('=' * 60);
+  print('\nТЕСТ 7: Сравнение с бинарной кучей');
   print('Для 12 элементов:');
   print('  Бинарная куча: высота ≈ 4 уровня');
   print('  Тернарная куча: высота ≈ 3 уровня');
@@ -355,9 +341,7 @@ void main() {
   print('  Фактическая высота тернарной кучи: ${maxDepth + 1} уровней');
   check(maxDepth + 1 <= 3, 'Высота более 3 уровней');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 8: Множественные операции insert/extract');
-  print('=' * 60);
+  print('\nТЕСТ 8: Множественные операции insert/extract');
   var complexHeap = Heap<int>(isMaxHeap: true);
   
   // Вставляем элементы
@@ -384,7 +368,5 @@ void main() {
     print('  $parent -> $children');
     check(children.length <= 3, 'У узла более 3 детей');
   });
-  
-  print('\n✅ Все тесты пройдены успешно!');
 }
 

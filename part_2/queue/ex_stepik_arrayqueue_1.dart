@@ -5,12 +5,12 @@ class ArrayQueue<T> {
   final int? _fixedSize;
 
   ArrayQueue({int? fixedSize})
-      : _fixedSize = fixedSize,
-        _queue = List<T?>.filled(
-          fixedSize ?? 16,
-          null,
-          growable: fixedSize == null,
-        );
+    : _fixedSize = fixedSize,
+      _queue = List<T?>.filled(
+        fixedSize ?? 16,
+        null,
+        growable: fixedSize == null,
+      );
 
   void enqueue(T element) {
     if (_tail == _queue.length && _fixedSize == null) {
@@ -50,11 +50,7 @@ class ArrayQueue<T> {
   int get size => _tail - _head;
 
   void clear() {
-    _queue = List<T?>.filled(
-      _queue.length,
-      null,
-      growable: _fixedSize == null,
-    );
+    _queue = List<T?>.filled(_queue.length, null, growable: _fixedSize == null);
     _head = 0;
     _tail = 0;
   }
@@ -112,7 +108,7 @@ void main() {
   var queue2 = ArrayQueue<int>();
   print('Пустая очередь: $queue2');
   queue2.reverse();
-  print('После reverse: $queue2 (не изменилась)');
+  print('После reverse: $queue2');
   print('');
 
   print('=== Тест 3: Один элемент ===');
@@ -120,7 +116,7 @@ void main() {
   queue3.enqueue(42);
   print('Очередь до reverse: $queue3');
   queue3.reverse();
-  print('Очередь после reverse: $queue3 (не изменилась)');
+  print('Очередь после reverse: $queue3');
   print('');
 
   print('=== Тест 4: Проверка порядка элементов через dequeue ===');
@@ -162,7 +158,6 @@ void main() {
   queue6.reverse();
   print('После первого reverse: $queue6');
   queue6.reverse();
-  print('После второго reverse: $queue6 (вернулась к исходной)');
+  print('После второго reverse: $queue6');
   print('Размер: ${queue6.size}'); // 3
 }
-

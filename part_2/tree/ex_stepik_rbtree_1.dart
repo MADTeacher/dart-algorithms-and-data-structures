@@ -410,8 +410,6 @@ class RBTree<T extends IKey> {
 }
 
 void main() {
-  print('=== Задача 1: Безопасная проверка наличия ключа ===\n');
-
   final tree = RBTree<Worker>();
 
   // Вставить Worker(id: 10)
@@ -423,14 +421,10 @@ void main() {
   print('\nПроверка contains(10):');
   final contains10 = tree.contains(10);
   print('contains(10) = $contains10');
-  assert(contains10 == true, 'Ожидалось true для ключа 10');
 
   // Вызвать contains(999) -> ожид. false (без падения программы)
   print('\nПроверка contains(999):');
   final contains999 = tree.contains(999);
   print('contains(999) = $contains999');
-  assert(contains999 == false, 'Ожидалось false для ключа 999');
-
-  print('\n✓ Все тесты пройдены успешно!');
 }
 

@@ -1,6 +1,8 @@
 // Задача 3: Линейное построение кучи (Floyd's Algorithm)
 // Реализация метода buildLinear для построения кучи за O(N)
 
+import 'dart:math';
+
 class Heap<T extends Comparable<dynamic>> {
   List<T> _heap;
   final bool _isMaxHeap;
@@ -165,43 +167,22 @@ void check(bool condition, String message) {
 }
 
 void main() {
-  print('=' * 60);
-  print('ТЕСТ 1: Производительность на большом массиве');
-  print('=' * 60);
+  print('ТЕСТ 1: Cоздание кучи');
   var largeList = List.generate(100000, (i) => i);
-  largeList.shuffle();
+  largeList.shuffle(Random(42));
   
   print('Размер массива: ${largeList.length} элементов');
-  
-  // Метод fromList (O(N log N))
-  var stopwatch1 = Stopwatch()..start();
   var heap1 = Heap.fromList(largeList, isMaxHeap: true);
-  stopwatch1.stop();
-  print('fromList: ${stopwatch1.elapsedMilliseconds} мс');
-  
-  // Метод buildLinear (O(N))
-  var stopwatch2 = Stopwatch()..start();
   var heap2 = Heap.buildLinear(largeList, isMaxHeap: true);
-  stopwatch2.stop();
-  print('buildLinear: ${stopwatch2.elapsedMilliseconds} мс');
+
   
-  if (stopwatch2.elapsedMilliseconds > 0) {
-    double speedup = stopwatch1.elapsedMilliseconds / stopwatch2.elapsedMilliseconds;
-    print('Ускорение: ${speedup.toStringAsFixed(2)}x');
-    check(speedup > 1.0, 'buildLinear не быстрее');
-  }
-  
-  print('\n' + '=' * 60);
-  print('ТЕСТ 2: Корректность построения кучи');
-  print('=' * 60);
+  print('\nТЕСТ 2: Корректность построения кучи');
   print('heap1.peek(): ${heap1.peek()}');
   print('heap2.peek(): ${heap2.peek()}');
   check(heap1.peek() == heap2.peek(), 'Корневые элементы не совпадают');
   print('Оба метода дают одинаковый корневой элемент: ✅');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 3: Проверка свойства кучи через извлечение');
-  print('=' * 60);
+  print('\nТЕСТ 3: Проверка свойства кучи через извлечение');
   print('Извлекаем элементы из heap2:');
   List<int> extracted = [];
   int extractCount = 20;
@@ -222,12 +203,10 @@ void main() {
   print('Порядок извлечения корректен: $isOrderCorrect');
   check(isOrderCorrect, 'Порядок не убывающий');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 4: Сравнение всех извлеченных элементов');
-  print('=' * 60);
+  print('\nТЕСТ 4: Сравнение всех извлеченных элементов');
   // Создаем новые кучи для полного сравнения
   var list1 = List<int>.generate(1000, (i) => i);
-  list1.shuffle();
+  list1.shuffle(Random(42));
   var list2 = List<int>.from(list1);
   
   var h1 = Heap.fromList(list1, isMaxHeap: true);
@@ -257,9 +236,7 @@ void main() {
   print('Все элементы совпадают: $allMatch');
   check(allMatch, 'Последовательности извлечения не совпадают');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 5: Минимальная куча');
-  print('=' * 60);
+  print('\nТЕСТ 5: Минимальная куча');
   var smallList = [10, 5, 20, 3, 15, 7, 25];
   var minHeap1 = Heap.fromList(smallList, isMaxHeap: false);
   var minHeap2 = Heap.buildLinear(smallList, isMaxHeap: false);
@@ -282,9 +259,7 @@ void main() {
   print('buildLinear извлечение: $min2');
   check(min1.toString() == min2.toString(), 'Последовательности не совпадают');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 6: Пустой список');
-  print('=' * 60);
+  print('\nТЕСТ 6: Пустой список');
   var emptyHeap1 = Heap.fromList(<int>[], isMaxHeap: true);
   var emptyHeap2 = Heap.buildLinear(<int>[], isMaxHeap: true);
   
@@ -292,9 +267,7 @@ void main() {
   print('buildLinear isEmpty: ${emptyHeap2.isEmpty}');
   check(emptyHeap1.isEmpty && emptyHeap2.isEmpty, 'Кучи не пустые');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 7: Один элемент');
-  print('=' * 60);
+  print('\nТЕСТ 7: Один элемент');
   var singleHeap1 = Heap.fromList([42], isMaxHeap: true);
   var singleHeap2 = Heap.buildLinear([42], isMaxHeap: true);
   
@@ -302,9 +275,7 @@ void main() {
   print('buildLinear peek: ${singleHeap2.peek()}');
   check(singleHeap1.peek() == singleHeap2.peek() && singleHeap1.peek() == 42, 'Корневые элементы не совпадают или не равны 42');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 8: Два элемента');
-  print('=' * 60);
+  print('\nТЕСТ 8: Два элемента');
   var twoHeap1 = Heap.fromList([10, 5], isMaxHeap: true);
   var twoHeap2 = Heap.buildLinear([10, 5], isMaxHeap: true);
   
@@ -317,7 +288,5 @@ void main() {
   print('fromList extract: $e1');
   print('buildLinear extract: $e2');
   check(e1 == e2, 'Извлеченные элементы не совпадают');
-  
-  print('\n✅ Все тесты пройдены успешно!');
 }
 

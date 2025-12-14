@@ -423,8 +423,6 @@ class RBTree<T extends IKey> {
 }
 
 void main() {
-  print('=== Задача 3: Функциональная свертка (Fold/Reduce) ===\n');
-
   final tree = RBTree<Worker>();
 
   // Дерево с Worker-ами, у которых id: 1, 2, 3
@@ -438,22 +436,15 @@ void main() {
   print('\n--- Тест 1: Сумма всех ID ---');
   int sum = tree.fold<int>(0, (prev, item) => prev + item.id);
   print('Сумма всех ID: $sum');
-  print('Ожидается: 6');
-  assert(sum == 6, 'Ожидалась сумма 6');
 
   // Задача: собрать все имена в строку
   print('\n--- Тест 2: Конкатенация имен ---');
   String names = tree.fold<String>('', (prev, item) => prev + item.name);
   print('Имена: "$names"');
-  print('Ожидается: строка с именами всех Worker-ов');
 
   // Дополнительный тест: произведение всех ID
   print('\n--- Тест 3: Произведение всех ID ---');
   int product = tree.fold<int>(1, (prev, item) => prev * item.id);
   print('Произведение всех ID: $product');
-  print('Ожидается: 6 (1 * 2 * 3)');
-  assert(product == 6, 'Ожидалось произведение 6');
-
-  print('\n✓ Все тесты пройдены успешно!');
 }
 

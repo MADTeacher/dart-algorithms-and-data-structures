@@ -182,9 +182,7 @@ void check(bool condition, String message) {
 }
 
 void main() {
-  print('=' * 60);
   print('ТЕСТ 1: MaxHeap - увеличение приоритета (всплытие)');
-  print('=' * 60);
   var maxHeap = Heap.fromList([100, 50, 20], isMaxHeap: true);
   print('Исходная куча:');
   print(maxHeap);
@@ -199,9 +197,7 @@ void main() {
   print('peek(): $newRoot');
   check(newRoot == 200, 'Корневой элемент не равен 200');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 2: MaxHeap - уменьшение приоритета (погружение)');
-  print('=' * 60);
+  print('\nТЕСТ 2: MaxHeap - уменьшение приоритета (погружение)');
   print('Обновляем 200 -> 1');
   maxHeap.update(200, 1);
   print('Куча после update:');
@@ -232,9 +228,7 @@ void main() {
   check(isOrderCorrect, 'Порядок не убывающий');
   check(extracted.last == 1, 'Элемент 1 не последний');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 3: MinHeap - уменьшение приоритета (всплытие)');
-  print('=' * 60);
+  print('\nТЕСТ 3: MinHeap - уменьшение приоритета (всплытие)');
   var minHeap = Heap.fromList([1, 5, 10, 20], isMaxHeap: false);
   print('Исходная куча:');
   print(minHeap);
@@ -249,9 +243,7 @@ void main() {
   print('peek(): $minNewRoot');
   check(minNewRoot == 0, 'Корневой элемент не равен 0');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 4: MinHeap - увеличение приоритета (погружение)');
-  print('=' * 60);
+  print('\nТЕСТ 4: MinHeap - увеличение приоритета (погружение)');
   print('Обновляем 0 -> 15');
   minHeap.update(0, 15);
   print('Куча после update:');
@@ -260,9 +252,7 @@ void main() {
   print('peek(): $minRootAfterIncrease');
   check(minRootAfterIncrease == 1, 'Корневой элемент не равен 1');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 5: Обновление без изменения позиции');
-  print('=' * 60);
+  print('\nТЕСТ 5: Обновление без изменения позиции');
   var stableHeap = Heap.fromList([100, 50, 75, 25, 30], isMaxHeap: true);
   print('Исходная куча:');
   print(stableHeap);
@@ -278,9 +268,7 @@ void main() {
   print('Корень после: $stableRootAfter');
   check(stableRootAfter == stableRoot, 'Корень изменился');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 6: Обновление корневого элемента');
-  print('=' * 60);
+  print('\nТЕСТ 6: Обновление корневого элемента');
   var rootHeap = Heap.fromList([100, 50, 75], isMaxHeap: true);
   print('Исходная куча:');
   print(rootHeap);
@@ -303,9 +291,7 @@ void main() {
   print('Новый корень: $finalRoot');
   check(finalRoot == 75, 'Корень не равен 75');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 7: Обновление несуществующего элемента');
-  print('=' * 60);
+  print('\nТЕСТ 7: Обновление несуществующего элемента');
   var testHeap = Heap.fromList([10, 20, 30], isMaxHeap: true);
   try {
     testHeap.update(999, 1000);
@@ -315,9 +301,7 @@ void main() {
     check(e is ArgumentError, 'Исключение не ArgumentError');
   }
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 8: Множественные обновления');
-  print('=' * 60);
+  print('\nТЕСТ 8: Множественные обновления');
   var multiHeap = Heap.fromList([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], isMaxHeap: true);
   print('Исходная куча (size: ${multiHeap.size}):');
   print('Корень: ${multiHeap.peek()}');
@@ -356,9 +340,7 @@ void main() {
   print('Порядок корректен: $isFinalOrderCorrect');
   check(isFinalOrderCorrect, 'Порядок извлечения некорректен');
   
-  print('\n' + '=' * 60);
-  print('ТЕСТ 9: Обновление на то же значение');
-  print('=' * 60);
+  print('\nТЕСТ 9: Обновление на то же значение');
   var sameHeap = Heap.fromList([10, 20, 30], isMaxHeap: true);
   int sameRoot = sameHeap.peek();
   print('Исходный корень: $sameRoot');
@@ -367,7 +349,5 @@ void main() {
   int sameRootAfter = sameHeap.peek();
   print('Корень после update(20, 20): $sameRootAfter');
   check(sameRootAfter == sameRoot, 'Корень изменился');
-  
-  print('\n✅ Все тесты пройдены успешно!');
 }
 
