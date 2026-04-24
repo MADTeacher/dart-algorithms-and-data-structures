@@ -91,11 +91,13 @@ class DynamicArray<T extends Comparable<dynamic>> extends Iterable<T> {
   }
 
   void _resize() {
-    int newCapacity = _elements.length * 2;
+    int newCapacity = _elements.isEmpty ? 1 : _elements.length * 2;
     List<T?> newElements = List<T?>.filled(newCapacity, null);
+
     for (int i = 0; i < _size; i++) {
       newElements[i] = _elements[i];
     }
+
     _elements = newElements;
   }
 
